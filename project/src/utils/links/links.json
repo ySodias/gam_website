@@ -1,0 +1,16 @@
+{
+  "Dominio": [
+    {
+      "name": "Github",
+      "url": "https://github.com/ySodias/gam_website"
+    },
+    {
+      "name": "Youtube",
+      "url": "https://www.youtube.com/"
+    },
+    {
+      "name": "Twich",
+      "url": "https://www.twitch.tv/"
+    }
+  ]
+}

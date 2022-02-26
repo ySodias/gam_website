@@ -1,6 +1,6 @@
 import {Navbar, Container, Row, Col} from 'react-bootstrap';
-import Vector from '../assets/Vector.svg';
-import Logo from '../assets/Logo.svg'
+import Vector from '../assets/icons/Vector.svg';
+import Logo from '../assets/icons/Logo.svg'
 import CSS from 'csstype';
 
 const barStyle: CSS.Properties = {

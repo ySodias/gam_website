@@ -1,8 +1,8 @@
-import {Row, Container, Col} from 'react-bootstrap';
-import Github from '../assets/Github.svg';
-import Twich from '../assets/Twich.svg';
-import Youtube from '../assets/Youtube.svg';
-import CSS from 'csstype';
+import { Row, Container, Col } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faTwitch, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import CSS from 'csstype'
+import { link } from '../utils/links/link'
 
 const redLineStyle: CSS.Properties = {
     backgroundColor: 'rgba(161, 24, 24, 0.7)',
@@ -10,14 +10,13 @@ const redLineStyle: CSS.Properties = {
     width: '100%',
 }
 
-const imgStyle: CSS.Properties = {
-    height: '12%',
-    width: '12%', 
+function getJsonUrl(): any {
+    const url = Object.values(link['Dominio'])
+    return url
 }
 
-
 export function Footer(){
-    let url="https://github.com/ySodias/gam_website/tree/dev"
+    let url = getJsonUrl()
     return(
         <div>
             <Row>
@@ -27,11 +26,9 @@ export function Footer(){
                 <Container>
                     <Col md={{ span: 4, offset: 4 }}>
                         <div className='d-flex justify-content-center m-3'>
-                            <img className='fluid p-3'  style={imgStyle} src={Twich}/>
-                            <a href={url} >
-                                <img className='fluid p-3'  style={imgStyle} src={Github}/>
-                            </a>
-                            <img className='fluid p-3'  style={imgStyle} src={Youtube}/>
+                            <a href={url[0]['url']} className="p-3"><FontAwesomeIcon icon={faGithub} /></a>
+                            <a href={url[2]['url']} className="p-3"><FontAwesomeIcon icon={faTwitch} /></a>
+                            <a href={url[1]['url']} className="p-3"><FontAwesomeIcon icon={faYoutube} /></a>
                         </div>
                     </Col>
                 </Container>

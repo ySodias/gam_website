@@ -1,13 +1,19 @@
 import { Row, Container, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTwitch, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import CSS from 'csstype'
-import { link } from '../utils/links/link'
+import CSS from 'csstype';
+import { link } from '../utils/links/link';
 
 const redLineStyle: CSS.Properties = {
     backgroundColor: 'rgba(161, 24, 24, 0.7)',
-    height: '100%',
+    height: '30px',
     width: '100%',
+}
+
+const aStyle: CSS.Properties = {
+    textDecoration: 'none',
+    color: 'black',
+    fontSize: '20px'
 }
 
 function getJsonUrl(): any {
@@ -26,14 +32,13 @@ export function Footer(){
                 <Container>
                     <Col md={{ span: 4, offset: 4 }}>
                         <div className='d-flex justify-content-center m-3'>
-                            <a href={url[0]['url']} className="p-3"><FontAwesomeIcon icon={faGithub} /></a>
-                            <a href={url[2]['url']} className="p-3"><FontAwesomeIcon icon={faTwitch} /></a>
-                            <a href={url[1]['url']} className="p-3"><FontAwesomeIcon icon={faYoutube} /></a>
+                            <a href={url[0]['url']} style={aStyle} className="p-3" target="_blank"><FontAwesomeIcon icon={faGithub} /></a>
+                            <a href={url[2]['url']} style={aStyle} className="p-3" target="_blank"><FontAwesomeIcon icon={faTwitch} /></a>
+                            <a href={url[1]['url']} style={aStyle} className="p-3" target="_blank"><FontAwesomeIcon icon={faYoutube} /></a>
                         </div>
                     </Col>
                 </Container>
             </Row>
     </div>
-        
     )
 }

@@ -1,27 +1,29 @@
-import {Navbar, Container, Row, Col} from 'react-bootstrap';
-import Vector from '../assets/icons/Vector.svg';
-import Logo from '../assets/icons/Logo.svg'
+import { Navbar, Container, Row, Col } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGamepad, faBars } from '@fortawesome/free-solid-svg-icons';
 import CSS from 'csstype';
 
-const barStyle: CSS.Properties = {
-  height: '70%',
-  width: '70%'
-}
-const logoStyle: CSS.Properties = {
-  height: '100%',
-  width: '100%'
+const aStyle: CSS.Properties = {
+  textDecoration: 'none',
+  color: 'black',
+  fontSize: '20px'
 }
 
 export function Header(){
   return (
-    <Navbar bg="light" variant="light">
-      <Container>
-      <Navbar.Brand href="#home"><img className='fluid' style={barStyle} src={Vector} /></Navbar.Brand>
-      <Row>
-        <Col><img className='fluid' style={logoStyle} src={Logo}/></Col>
-        <Col></Col>
+      <Container fluid>
+      <Row >
+          <Col md={4}>
+            <div className='p-3'>
+              <a style={aStyle} className="p-3"><FontAwesomeIcon icon={faBars} /></a>
+            </div>
+          </Col>
+          <Col md={{ span: 4, offset: 4 }} >
+            <div className='p-3'>
+              <a style={aStyle} className="p-3"><FontAwesomeIcon icon={faGamepad} /></a>
+            </div>
+          </Col>
       </Row>
       </Container>
-    </Navbar>
   )
 }

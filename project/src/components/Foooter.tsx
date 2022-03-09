@@ -32,7 +32,7 @@ export function Footer(){
                 <Container>
                     <Col md={{ span: 4, offset: 4 }}>
                         <div className='d-flex justify-content-center m-3'>
-                            <a href={url[0]['url']} style={aStyle} clssName="p-3" target="_blank"><FontAwesomeIcon icon={faGithub} /></a>
+                            <a href={url[0]['url']} style={aStyle} className="p-3" target="_blank"><FontAwesomeIcon icon={faGithub} /></a>
                             <a href={url[2]['url']} style={aStyle} className="p-3" target="_blank"><FontAwesomeIcon icon={faTwitch} /></a>
                             <a href={url[1]['url']} style={aStyle} className="p-3" target="_blank"><FontAwesomeIcon icon={faYoutube} /></a>
                         </div>

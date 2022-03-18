@@ -11,7 +11,7 @@ const aStyle: CSS.Properties = {
 
 export function Header(){
   return (
-      <Container fluid>
+      <Container fluid className='border-bottom'>
       <Row >
           <Col md={4}>
             <div className='p-3'>

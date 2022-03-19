@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { media } from '../../theme/media'
 
 export const StyledContainer = styled.div`
 @media(min-height: 737px){

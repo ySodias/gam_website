@@ -10,7 +10,8 @@ const SignUp: React.FunctionComponent<ISignUpPageProps> = (props) =>{
     <div>
         <Row>
             <Col className="d-flex justify-content-center align-self-center"> 
-                <img src="/src/assets/img/Gaming-amico.svg" width="50%" height="50%"></img>
+                <img src="/src/assets/img/Gaming-amico.svg" 
+                width="50%" height="50%"></img>
             </Col>
             <Col >
                 <FormSignUp/>

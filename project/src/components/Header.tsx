@@ -15,12 +15,14 @@ export function Header(){
       <Row >
           <Col md={4}>
             <div className='p-3'>
-              <a style={aStyle} className="p-3"><FontAwesomeIcon icon={faBars} /></a>
+              <a style={aStyle} className="p-3">
+                <FontAwesomeIcon icon={faBars} /></a>
             </div>
           </Col>
           <Col md={{ span: 4, offset: 4 }} >
             <div className='p-3'>
-              <a style={aStyle} className="p-3"><FontAwesomeIcon icon={faGamepad} /></a>
+              <a style={aStyle} className="p-3">
+                <FontAwesomeIcon icon={faGamepad} /></a>
             </div>
           </Col>
       </Row>

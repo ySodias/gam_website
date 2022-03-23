@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap'
 import { usePosts } from '../../hooks';
 import { Post } from '../../components/Post/Post'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export interface IFeedPageProps {}
 

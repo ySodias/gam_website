@@ -23,11 +23,11 @@ export const FormSignIn = () => {
             <Form.Control type="password" placeholder="Password" />
           </Form.Group>
             <div className='d-flex justify-content-around p-3'>
-                  <Button onClick={() => navigate('/')}
+                  <Button onClick={() => navigate('/feed')}
                   variant="warning" type="submit">
                     Cancelar
                   </Button>
-                  <Button onClick={() => navigate('/')} 
+                  <Button onClick={() => navigate('/feed')} 
                   variant="danger" type="submit">
                     Logar
                   </Button>

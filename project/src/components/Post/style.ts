@@ -5,6 +5,8 @@ color: white;
 max-height: 15ch;
 max-width: 40vw;
 overflow: hidden;
+text-overflow: ellipsis;
+white-space: normal 
 `
 
 export const DivStyle = styled.div`

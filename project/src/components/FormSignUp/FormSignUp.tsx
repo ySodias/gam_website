@@ -31,14 +31,14 @@ export const FormSignUp = () => {
             </Form.Group>
             <div className='d-flex justify-content-center p-3'>
                 <div className='p-3'>
-                  <Button onClick={() => navigate('/')}
+                  <Button onClick={() => navigate('/feed')}
                     variant="warning" type="submit">
                       Back
                   </Button></div>
                 <div className='p-3'>
                   <Button onClick={() => navigate('/signin')} 
                     variant="danger" type="submit">
-                      Star
+                      Start
                   </Button>
                 </div>
             </div>

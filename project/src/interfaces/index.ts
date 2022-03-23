@@ -1,1 +1,2 @@
-export * from './IPosts'
+export * from './IPosts';
+export * from './IUser'

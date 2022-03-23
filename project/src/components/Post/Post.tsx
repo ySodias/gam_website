@@ -1,15 +1,40 @@
 import { StyledContainer } from '../FormSignIn/style';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { PStyle,DivStyle } from './style';
 
 export type PostProps = {
+  id: number;
   src_img: string;
+  type: number;
   title: string;
+  desc: string;
+  id_user: number;
+  created_at: string;
+  updated_at: string
+
 }
 
 export const Post: React.FC<PostProps> = ({
+  id,
   src_img,
-  title}) => {
+  type,
+  title,
+  desc,
+  id_user,
+  created_at,
+  updated_at,}) => {
     return(
-      <img src={src_img} alt={title}></img>
+      <Container className="p-5">
+      <Row>
+        <Col className="md-6">
+            <img className="img-fluid" src={src_img} alt={title}></img>
+            <DivStyle>
+              <PStyle>{desc}</PStyle>
+          </DivStyle>
+        </Col>
+      </Row>
+      </Container>
+
     )
   }

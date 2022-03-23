@@ -19,7 +19,15 @@ const Feed: React.FunctionComponent<IFeedPageProps> = (props) => {
       <Row>
           <Col >
             <div className="d-flex justify-content-center align-content-center">
-            <Post src_img={posts[0]?.src_img} title={posts[0]?.title}/>
+            <Post
+            id={posts[0]?.id}
+            type={posts[0]?.type}
+            desc={posts[0]?.desc}
+            id_user={posts[0]?.id_user}
+            created_at={posts[0]?.created_at}
+            updated_at={posts[0]?.updated_at}
+            src_img={posts[0]?.src_img}
+             title={posts[0]?.title}/>
             </div>
           </Col>
           <Col>

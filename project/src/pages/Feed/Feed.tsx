@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap'
-import { usePosts } from '../../hooks';
+import { usePosts, useUser } from '../../hooks';
 import { Post } from '../../components/Post/Post'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -13,6 +13,15 @@ const Feed: React.FunctionComponent<IFeedPageProps> = (props) => {
   useEffect(() => {
     getAllPost();
   },  [getAllPost])
+
+  const { user, getUserById } = useUser();
+
+  useEffect(() =>{
+    let id = posts[0]?.id_user
+    getUserById(id);
+  }, [getUserById])
+
+  console.log(user)
 
   return(
     <div>

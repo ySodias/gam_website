@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { usePosts, useUser } from '../../hooks';
 import { Post } from '../../components/Post/Post';
+import { HeaderPost } from '../../components/Post/HeaderPost';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { IUser } from '../../interfaces';
 
@@ -23,13 +24,19 @@ const Feed: React.FunctionComponent<IFeedPageProps> = (props) => {
     getData()
   }, [getAllPost])
 
-  console.log(user)
   if (user) {
     return(
       <div>
         <Row>
-            <Col >
-              <div className="d-flex justify-content-center align-content-center">
+            <Col className="p-5">
+              <div className="">
+              <HeaderPost id_user={user[0].id}
+                          username={user[0].username}
+                          email_address={user[0].email_address}
+                          photo={user[0].photo}
+                          created_at={user[0].created_at}
+                          updated_at={user[0].updated_at}
+                          />
               <Post
               id={posts[0]?.id}
               type={posts[0]?.type}
@@ -39,12 +46,6 @@ const Feed: React.FunctionComponent<IFeedPageProps> = (props) => {
               updated_at={posts[0]?.updated_at}
               src_img={posts[0]?.src_img}
               title={posts[0]?.title}
-              user={[user.id ? user.id : 0,
-                user.username ? user.username : '',
-                user.email_address ? user.email_address : '',
-                user.photo ? user.photo : '',
-                user.created_at ? user.created_at : '',
-                user.updated_at ? user.updated_at : '']}
               />
               </div>
             </Col>

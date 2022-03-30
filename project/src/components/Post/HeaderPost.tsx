@@ -17,6 +17,8 @@ const PerfilStyle: CSS.Properties = {
     width: '5vw',
 }
 
+let respTime: string;
+
 export const HeaderPost: React.FC<HeaerPostProps> = ({
     id_user,
     username,
@@ -26,7 +28,7 @@ export const HeaderPost: React.FC<HeaerPostProps> = ({
     updated_at
 }) => {
 
-    async function toformatTime(created_at: string) {
+    async function toformatTime(created_at: string): Promise<string> {
         var date = new Date(created_at);
         var formattedDate: number = +format(date, 'MM')*30
         const respTime = await formatDistance(subDays(new Date(), 
@@ -34,14 +36,23 @@ export const HeaderPost: React.FC<HeaerPostProps> = ({
         return respTime
     }
 
-    const resptime = toformatTime(created_at)
-    console.log(resptime)
-
+    const response = toformatTime(created_at).then(
+        function(result) {
+            var p = document.getElementById('data')
+            if (result) {
+                p ? p.innerHTML = result : ''
+            }
+        }
+    )
+  
 
     return(
-        <div className="px-4 pb-2 d-flex align-items-center">
-            <img className="rounded-circle" style={PerfilStyle} src={photo} alt="username"></img>
-            <p className="px-3 m-0">{username}<br /> {resptime}</p>
+        <div className="px-3 pb-2 d-flex align-items-center">
+            <img className="rounded-circle" style={PerfilStyle} 
+                src={photo} alt="username"></img>
+                <p className="px-3 m-0">{username}<br />
+                <span id='data'></span> </p>
+            
         </div>
     )
 }

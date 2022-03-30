@@ -28,7 +28,6 @@ export const Post: React.FC<PostProps> = ({
   updated_at
   }) => {
       return(
-        <Container className="">
         <Row>     
           <Col className="md-6">
               <img className="img-fluid" src={src_img} alt={title}></img>
@@ -37,6 +36,5 @@ export const Post: React.FC<PostProps> = ({
             </DivStyle>
           </Col>
         </Row>
-        </Container>
       ) 
   }

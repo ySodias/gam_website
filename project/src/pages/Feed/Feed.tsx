@@ -5,6 +5,7 @@ import { Post } from '../../components/Post/Post';
 import { HeaderPost } from '../../components/Post/HeaderPost';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { IUser } from '../../interfaces';
+import { Interator } from '../../components/Post/Interators';
 
 export interface IFeedPageProps {}
 let user: IUser
@@ -29,7 +30,7 @@ const Feed: React.FunctionComponent<IFeedPageProps> = (props) => {
       <div>
         <Row>
             <Col className="p-5">
-              <div className="">
+              <div className="border">
               <HeaderPost id_user={user[0].id}
                           username={user[0].username}
                           email_address={user[0].email_address}
@@ -46,6 +47,12 @@ const Feed: React.FunctionComponent<IFeedPageProps> = (props) => {
               updated_at={posts[0]?.updated_at}
               src_img={posts[0]?.src_img}
               title={posts[0]?.title}
+              />
+              <Interator 
+                  id={}
+                  id_post={}
+                  likes={}
+                  comments={}
               />
               </div>
             </Col>

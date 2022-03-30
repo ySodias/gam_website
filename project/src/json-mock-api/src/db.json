@@ -31,5 +31,23 @@
       "id": 1,
       "nm_dominio": "pc"
     }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "id_user": 1,
+      "id_post": 1,
+      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "created_at": "2022-03-30 20:16:46.487907",
+      "updated_at": "2022-03-30 20:16:46.487907"
+    }
+  ],
+  "interators": [
+    {
+      "id": 1,
+      "id_post": 1,
+      "likes": 3000,
+      "comments": 500 
+    }
   ]
 }

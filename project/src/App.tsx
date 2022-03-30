@@ -16,7 +16,7 @@ const App: React.FunctionComponent<IApplicationProps> = (props) => {
           <Routes>
             <Route path = 'feed' element={<Feed />} />
             <Route path ='signin' element={<SignIn />} />
-            <Route path = 'signup' element={<SignUp />} />
+            <Route path = '/' element={<SignUp />} />
           </Routes>
         </BrowserRouter>
       <Footer />

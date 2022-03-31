@@ -6,6 +6,7 @@ import { HeaderPost } from '../../components/Post/HeaderPost';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { IUser } from '../../interfaces';
 import { Interator } from '../../components/Post/Interators';
+import { useInterator } from '../../hooks/useInterator';
 
 export interface IFeedPageProps {}
 let user: IUser
@@ -14,11 +15,19 @@ const Feed: React.FunctionComponent<IFeedPageProps> = (props) => {
 
   const { posts, getAllPost } = usePosts()
   const { user, getUserById } = useUser()
+  const { interator, getAllInteratorByPost } = useInterator() 
+
 
   async function getData(){
     const respPost = await getAllPost()
     const respUser = await getUserById(respPost[0].id_user)
+    getInteratorByPost(respPost[0].id)
     return respUser
+  }
+
+  async function getInteratorByPost(id_post: number) {
+    const respInterator = await getAllInteratorByPost(id_post)
+    return respInterator
   }
 
   useEffect(() => {
@@ -26,6 +35,7 @@ const Feed: React.FunctionComponent<IFeedPageProps> = (props) => {
   }, [getAllPost])
 
   if (user) {
+    console.log(interator)
     return(
       <div>
         <Row>
@@ -49,10 +59,10 @@ const Feed: React.FunctionComponent<IFeedPageProps> = (props) => {
               title={posts[0]?.title}
               />
               <Interator 
-                  id={}
-                  id_post={}
-                  likes={}
-                  comments={}
+                  id={interator[0]?.id}
+                  id_post={interator[0]?.id_post}
+                  likes={interator[0]?.likes}
+                  comments={interator[0]?.comments}
               />
               </div>
             </Col>

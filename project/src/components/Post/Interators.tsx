@@ -19,10 +19,10 @@ export const Interator: React.FC<InteratorPros> = ({
     return(
         <div className='d-flex px-3 border'>
         <div >
-          <img src={Love}></img>
+          <span className='px-3'>{likes ? likes : 0}</span><img src={Love}></img>
         </div>
         <div className='mx-3'>
-          <img src={Console}></img>
+          <span className='px-3'>{comments ? comments : 0}</span><img src={Console}></img>
         </div>
       </div>
     )

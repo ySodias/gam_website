@@ -30,10 +30,10 @@ export const Post: React.FC<PostProps> = ({
       return(
         <Row>     
           <Col className="md-6">
-              <img className="img-fluid" src={src_img} alt={title}></img>
+            <img className="img-fluid" src={src_img} alt={title}></img>
               <DivStyle>
                 <PStyle>{desc}</PStyle>
-            </DivStyle>
+              </DivStyle>
           </Col>
         </Row>
       ) 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PStyle = styled.p`
 color: white;
 max-height: 15ch;
-max-width: 40vw;
+max-width: 30vw;
 overflow: hidden;
 text-overflow: ellipsis;
 white-space: normal;

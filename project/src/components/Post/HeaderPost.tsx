@@ -13,8 +13,8 @@ export type HeaerPostProps = {
 }
 
 const PerfilStyle: CSS.Properties = {
-    height: '5vh',
-    width: '5vw',
+    height: '4.5vh',
+    width: '4.5vw',
 }
 
 let respTime: string;

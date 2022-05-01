@@ -2,30 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="628127f8-a9ad-4984-8d61-aca6459c7289" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/enviroments.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/Comments.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/Dominio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/Posts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/User.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authenticator/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client_secret.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/core.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/src/components/Post/HeaderPost.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../project/src/components/Post/HeaderPost.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/src/components/Post/Post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../project/src/components/Post/Post.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/src/components/Post/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../project/src/components/Post/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/src/interfaces/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../project/src/interfaces/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/src/service/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../project/src/service/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Comments.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Dominio.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Posts.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/User.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,14 +43,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Workspace/integrador-input-adapter-negocio" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Material de Estudos\WorkSpace\Front-end\React\gam_website\backend" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\workspace 2\gam_website\backend" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Comments">
+  <component name="RunManager" selected="Python.main">
     <configuration name="Comments" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -224,11 +215,11 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.main" />
       <item itemvalue="Python.Comments" />
       <item itemvalue="Python.Dominio" />
       <item itemvalue="Python.Posts" />
       <item itemvalue="Python.User" />
-      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
@@ -249,6 +240,18 @@
       <updated>1648853153502</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

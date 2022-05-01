@@ -1,14 +1,12 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from config import enviroments
+from flask_restful import Api
+from backend.controller.user_controller import UserControler
+from config.core import app
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = enviroments.DB_CONN
-db = SQLAlchemy(app)
+api = Api(app)
 
-@app.route('/')
-def create_table():
-    return''
+def set_urls():
+    api.add_resource(UserControler, '/users')
+    app.run()
 
 if __name__ == '__main__':
-    app.run()
+    set_urls()

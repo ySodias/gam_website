@@ -32,6 +32,7 @@ class UserRepository():
             session.commit()
             response = 'User Created', 201
         except Exception as e:
+            session.rollback()
             response = e.args, 500
         return response
 
@@ -46,6 +47,7 @@ class UserRepository():
             session.commit()
             response = body
         except Exception as e:
+            session.rollback()
             response = e.args, 500
         return response
 
@@ -59,6 +61,7 @@ class UserRepository():
             session.commit()
             response = f"{body[0][0]['username']} deleted with sucess", 200
         except Exception as e:
+            session.rollback()
             response = e.args, 500
 
         return response

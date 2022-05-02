@@ -9,7 +9,7 @@ class UserControler(Resource):
     def get(self):
         params = request.args
         response = user_service.get_user(params)
-        return response
+        return response if response else ('User Not Found', 404)
 
     def post(self):
         request_data = request.get_json()

@@ -2,10 +2,44 @@ import Form from 'react-bootstrap/Form';
 import { StyledContainer } from '../FormSignIn/style';
 import { Link, useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
+import { useUser } from '../../hooks';
+import { useState, useCallback } from 'react';
+
 
 export const FormSignUp = () => {
 
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email_adress, setEmail] = useState('');
+  const [photo, setPhoto] = useState('')
+
+ 
+  const { postUser } = useUser();
+
   const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    event?.preventDefault()
+    handleSubmitForm()
+  }
+
+async function handleSubmitForm() {
+  if (username && password && email_adress && photo) {
+    const response = await postUser({ 
+    'username': username,
+    'password': password,
+    'email_adress': email_adress,
+    'photo': photo 
+  })
+    if (response.status === 201) {
+      navigate('/signin')
+    } else {
+      alert('Error')
+    }
+  } else {
+    handleSubmitForm()
+  }
+}
 
   return (
     <StyledContainer className='d-flex justify-content-center'>
@@ -13,21 +47,25 @@ export const FormSignUp = () => {
           <div className='d-flex justify-content-center pb-5'>
             <h1>Sign Up</h1>
           </div>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Group className="mb-3" controlId="formUsername">
               <Form.Label>Username</Form.Label>
-              <Form.Control type="text" placeholder="Username" />
+              <Form.Control type="text" placeholder="Username" 
+              onChange={e => setUsername(e.target.value)}/>
             </Form.Group>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Group className="mb-3" controlId="formEmail">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="name@example.com" />
+              <Form.Control type="email" placeholder="name@example.com" 
+              onChange={(e) => setEmail(e.target.value)} />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className="mb-3" controlId="formPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control type="password" placeholder="Password" 
+              onChange={(e) => setPassword(e.target.value)} />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className="mb-3" controlId="formPhoto">
               <Form.Label>Photo</Form.Label>
-              <Form.Control type="file" placeholder="Upload your file" />
+              <Form.Control type="text" placeholder="Insert photo url"
+              onChange={(e) => setPhoto(e.target.value)} />
             </Form.Group>
             <div className='d-flex justify-content-center p-3'>
                 <div className='p-3'>
@@ -36,8 +74,8 @@ export const FormSignUp = () => {
                       Back
                   </Button></div>
                 <div className='p-3'>
-                  <Button onClick={() => navigate('/signin')} 
-                    variant="danger" type="submit">
+                  <Button 
+                    variant="danger" type="submit" onClick={handleSubmit}> 
                       Start
                   </Button>
                 </div>

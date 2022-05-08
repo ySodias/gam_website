@@ -6,6 +6,7 @@ from backend.model.Dominio import Dominio
 dominio = Dominio()
 
 class DominioRepository():
+
     def find_dominio_by_id(self, params):
         if params.get('id') != None:
             query = Dominio.query.filter(Dominio.id == params.get('id'))
@@ -55,11 +56,11 @@ class DominioRepository():
         try:
             stm = (
                 delete(Dominio).
-                    where(Dominio.id == body[0][0]['id'])
+                    where(Dominio.id == body[0][0][0]['id'])
             )
             session.execute(stm)
             session.commit()
-            response = f"{body[0][0]['nm_dominio']} deleted with sucess", 200
+            response = f"{body[0][0][0]['nm_dominio']} deleted with sucess", 200
         except Exception as e:
             session.rollback()
             response = e.args, 500

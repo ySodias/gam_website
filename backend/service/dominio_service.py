@@ -20,6 +20,7 @@ class DominioService():
         return (res, 200) if res[0] != None else None
 
     def get_dominio_by_id(self, params):
+        res = []
         if params.get('id'):
             res = dominio_repository.find_dominio_by_id(params)
             if res:

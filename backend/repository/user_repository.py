@@ -23,10 +23,19 @@ class UserRepository():
             resp = User.query.all()
         return resp
 
+    def find_users_by_id(self, params):
+        if params.get('id') != None:
+            query = User.query.filter(User.id == params.get('id'))
+            resp = [x for x in query]
+            return resp
+        else:
+            return None
+
     def insert_user(self, body):
         try:
             user.username = body.get('username')
             user.email_adress = body.get('email_adress')
+            user.password = body.get('password')
             user.photo = body.get('photo')
             session.add(user)
             session.commit()
@@ -55,11 +64,11 @@ class UserRepository():
         try:
             stm = (
                 delete(User).
-                where(User.id == body[0][0]['id'])
+                where(User.id == body[0][0][0]['id'])
             )
             session.execute(stm)
             session.commit()
-            response = f"{body[0][0]['username']} deleted with sucess", 200
+            response = f"{body[0][0][0]['username']} deleted with sucess", 200
         except Exception as e:
             session.rollback()
             response = e.args, 500

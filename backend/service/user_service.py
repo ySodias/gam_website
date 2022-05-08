@@ -18,6 +18,16 @@ class UserService():
             if res:
                 res = [x.__dict__ for x in res]
                 res = format_util.format_list_obj(res)
+        return (res, 200) if len(res) > 0 else None
+
+    def get_user_by_id(self, params):
+        if params.get('id'):
+            res = user_repository.find_users_by_id(params)
+            if res:
+                res = [x.__dict__ for x in res]
+                res = format_util.format_list_obj(res)
+            else:
+                return res.append(None)
         return (res, 200) if res[0] != None else None
 
     def post_user(self, data):
@@ -25,12 +35,12 @@ class UserService():
         return response
 
     def put_user(self, data):
-        user = self.get_user(data)
+        user = self.get_user_by_id(data)
         response = user_repository.update_user(data) if user else ('User Not Found', 404)
         return response
 
     def delete_user(self, data):
-        user = self.get_user(data)
+        user = self.get_user_by_id(data)
         response = user_repository.delete_user(user) if user else ('User Not Found', 404)
         return response
 

@@ -1,7 +1,11 @@
 from backend.repository.post_repository import PostRepository
+from backend.service.comments_service import CommentsService
+from backend.service.likes_service import LikesService
 from backend.utils.format_util import FormatUtil
 
 post_repository = PostRepository()
+comments_service = CommentsService()
+likes_service = LikesService()
 format_util = FormatUtil()
 
 class PostService():
@@ -44,3 +48,17 @@ class PostService():
         post = self.get_post(data)
         response = post_repository.delete_post(post) if post else ('Post Not Found', 404)
         return response
+
+    def get_interators(self, id_post):
+        try:
+            data = {"id_post": id_post['id_post']}
+            list_comments = comments_service.get_comments(data)
+            list_likes = likes_service.get_like(data)
+            data = {
+                "id_post": data['id_post'],
+                "likes": len(list_likes),
+                "comments": len(list_comments)
+            }
+            return data
+        except Exception as e:
+            return (e.args, 500)

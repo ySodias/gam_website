@@ -1,7 +1,7 @@
 from flask import request
 from flask_restful import Resource
 
-from backend.service.likes_service import LikesService
+from service.likes_service import LikesService
 
 likes_service = LikesService()
 

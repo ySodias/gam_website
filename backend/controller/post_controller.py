@@ -1,6 +1,6 @@
 from flask import request
 from flask_restful import Resource
-from backend.service.post_service import PostService
+from service.post_service import PostService
 
 post_service = PostService()
 

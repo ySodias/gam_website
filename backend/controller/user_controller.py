@@ -1,6 +1,6 @@
 from flask import request
 from flask_restful import Resource
-from backend.service.user_service import UserService
+from service.user_service import UserService
 
 user_service = UserService()
 

@@ -1,7 +1,7 @@
 from flask import request
 from flask_restful import Resource
 
-from backend.service.dominio_service import DominioService
+from service.dominio_service import DominioService
 
 dominio_service = DominioService()
 

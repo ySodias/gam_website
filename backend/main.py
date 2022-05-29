@@ -1,10 +1,10 @@
 from flask_restful import Api
 
-from backend.controller.comments_controller import CommentsController
-from backend.controller.dominio_controller import DominioControler
-from backend.controller.likes_controller import LikesController
-from backend.controller.post_controller import PostController, InteratorsController
-from backend.controller.user_controller import UserControler
+from controller.comments_controller import CommentsController
+from controller.dominio_controller import DominioControler
+from controller.likes_controller import LikesController
+from controller.post_controller import PostController, InteratorsController
+from controller.user_controller import UserControler
 from config.core import app
 
 api = Api(app)

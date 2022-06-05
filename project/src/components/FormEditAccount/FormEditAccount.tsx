@@ -1,11 +1,11 @@
 import Form from 'react-bootstrap/Form';
 import { StyledContainer } from '../FormSignIn/style';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
-import { IUser } from '../../interfaces';
 import { useUser } from '../../hooks';
-import { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
+import { Example } from '../Modals/DeleteUser'
 
 export const FormEditAccount = () => {
 
@@ -15,7 +15,7 @@ export const FormEditAccount = () => {
   const [photo, setPhoto] = useState('')
 
   const { putUser } = useUser();
-  const { user, getUserByUsername }  = useUser();
+  const { user, getUserByUsername, deleteUser }  = useUser();
 
   const navigate = useNavigate();
 
@@ -58,6 +58,18 @@ export const FormEditAccount = () => {
     handleForm();
   }, [])
   
+  async function handleModal(){
+    let user_resp = confirm('Are you sure you want to delete your account?')
+    console.log(user_resp)
+    if(user_resp){
+      const response = await deleteUser(user[0][0].id)
+      if(response.status === 200){
+        navigate('/signin')
+      }
+    }
+    return ''
+  }
+
   if (user){
     return (
       <StyledContainer className='d-flex justify-content-center'>
@@ -98,6 +110,12 @@ export const FormEditAccount = () => {
                   </Button>
                 </div>
               </div>
+              <div className='d-flex justify-content-center'>
+              <p>Deseja deletar sua conta? 
+                <Button variant="link" className="p-0 pb-1 aling-items-center"
+                onClick={handleModal}> 
+                Clique aqui </Button></p>
+            </div>
           </Form>
     </StyledContainer> 
   )

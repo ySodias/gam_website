@@ -25,10 +25,14 @@ const postUser = (data: any) => Api
         'Access-Control-Allow-Origin': '*'
     }})
 
+const deleteUser = (id: number) => Api
+    .delete<IUser>(`users?id=${id}`)
+
 export const UserService = {
     getUserById,
     getUserByUsername,
     putUser,
+    deleteUser,
     postUser,
     getByData
 }

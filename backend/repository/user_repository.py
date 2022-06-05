@@ -64,11 +64,11 @@ class UserRepository():
         try:
             stm = (
                 delete(User).
-                where(User.id == body[0][0][0]['id'])
+                where(User.id == body[0][0]['id'])
             )
             session.execute(stm)
             session.commit()
-            response = f"{body[0][0][0]['username']} deleted with sucess", 200
+            response = f"{body[0][0]['username']} deleted with sucess", 200
         except Exception as e:
             session.rollback()
             response = e.args, 500

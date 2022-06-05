@@ -35,6 +35,12 @@ export const useUser = () => {
     return response
     }, []);
 
+    const deleteUser = useCallback(async (id) => {
+        const { status, data } = await UserService.deleteUser(id);
+    if (status != 200) throw new Error();
+    const response = { data, status}
+    return response
+    }, []);
 
     const toLogin = useCallback(async (login) => {
         const { status, data } = await UserService.getByData(login)
@@ -50,6 +56,7 @@ return {
     getUserByUsername,
     postUser,
     putUser,
+    deleteUser,
     toLogin
     }
 }

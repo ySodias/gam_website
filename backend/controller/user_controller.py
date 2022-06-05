@@ -22,6 +22,6 @@ class UserControler(Resource):
         return response
 
     def delete(self):
-        request_data = request.get_json()
+        request_data = request.args
         response = user_service.delete_user(request_data)
         return response

@@ -1,40 +1,35 @@
-import { StyledContainer } from '../FormSignIn/style';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { PStyle,DivStyle } from './style';
-import { useUser } from '../../hooks';
-import React, { useEffect } from 'react';
-import { HeaderPost } from './HeaderPost';
+import { IPosts } from '../../interfaces';
+import { HeaderPost } from '../../components/Post/HeaderPost';
+import { Interator } from '../../components/Post/Interators';
+import React from 'react';
 
-export type PostProps = {
-  id: number;
-  src_img: string;
-  type: number;
-  title: string;
-  desc: string;
-  id_user: number;
-  created_at: string;
-  updated_at: string
+
+interface PostProps extends IPosts {
+  posts: IPosts[]
 }
 
 export const Post: React.FC<PostProps> = ({
-  id,
-  src_img,
-  type,
-  title,
-  desc,
-  id_user,
-  created_at,
-  updated_at
+    posts
   }) => {
-      return(
-        <Row>     
-          <Col className="md-6">
-            <img className="img-fluid" src={src_img} alt={title}></img>
-              <DivStyle>
-                <PStyle>{desc}</PStyle>
-              </DivStyle>
-          </Col>
-        </Row>
-      ) 
+    const post = posts.map((post: any) => {
+        return(
+          <Row className='mb-5 border'>
+            <HeaderPost users={post.user}/>
+            <Col className="md-6 mb-3">
+              <img className="img-fluid" src={post.src_img} alt={post.title}></img>
+                <DivStyle>
+                  <PStyle>{post.desc}</PStyle>
+                </DivStyle>
+            </Col>
+            <Interator 
+                  interator={post?.interator}
+              />
+          </Row>
+        )
+
+    })
+    return post
   }

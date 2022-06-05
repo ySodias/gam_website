@@ -1,12 +1,15 @@
 from backend.repository.post_repository import PostRepository
+from backend.repository.user_repository import UserRepository
 from backend.service.comments_service import CommentsService
 from backend.service.likes_service import LikesService
+from backend.service.user_service import UserService
 from backend.utils.format_util import FormatUtil
 
 post_repository = PostRepository()
 comments_service = CommentsService()
 likes_service = LikesService()
 format_util = FormatUtil()
+user_service = UserService()
 
 class PostService():
 
@@ -22,6 +25,17 @@ class PostService():
             if res:
                 res = [x.__dict__ for x in res]
                 res = format_util.format_list_obj(res)
+                for idx, r in enumerate(res):
+                    res_user = user_service.get_user_by_id({'id': r['id_user']})
+                    res[idx].update({'user': res_user[0][0]})
+                    try:
+                        res_interator = self.get_interators({'id_post': r['id']})
+                        if (type(res_interator) is dict):
+                            res[idx].update({'interator': res_interator})
+                        else:
+                            pass
+                    except:
+                        pass
         return (res, 200) if res[0] != None else None
 
     def get_post_by_id(self, params):

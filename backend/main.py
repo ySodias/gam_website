@@ -6,6 +6,7 @@ from controller.likes_controller import LikesController
 from controller.post_controller import PostController, InteratorsController
 from controller.user_controller import UserControler
 from config.core import app
+from flask import g
 
 api = Api(app)
 

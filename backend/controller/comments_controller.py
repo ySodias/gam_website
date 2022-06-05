@@ -1,7 +1,7 @@
 from flask import request
 from flask_restful import Resource
 
-from service.comments_service import CommentsService
+from backend.service.comments_service import CommentsService
 
 comments_service = CommentsService()
 

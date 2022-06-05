@@ -1,28 +1,27 @@
-import React from 'react';
+import React, { useEffect, useMemo } from 'react';
 import 'react-bootstrap';
 import Console from '../../assets/icons/Console.svg';
 import Love from '../../assets/icons/Love.svg'
+import { useInterator } from '../../hooks/useInterator';
+import { IInterator } from '../../interfaces';
 
-export type InteratorPros = {
-    id: number;
-    id_post: number;
-    likes: number;
-    comments: number
+export type IPostProps = {
+  interator: IInterator
 }
 
-export const Interator: React.FC<InteratorPros> = ({
-    id,
-    id_post,
-    likes,
-    comments
+let id_old: number = 0
+
+export const Interator: React.FC<IPostProps> = ({
+  interator
 }) => {
+  console.log(interator)
     return(
-        <div className='d-flex px-3 border'>
+        <div className='d-flex px-3 border pt-3 pb-3'>
         <div >
-          <span className='px-3'>{likes ? likes : 0}</span><img src={Love}></img>
+          <span className='px-3'>{interator?.likes}</span><img src={Love}></img>
         </div>
         <div className='mx-3'>
-          <span className='px-3'>{comments ? comments : 0}</span><img src={Console}></img>
+          <span className='px-3'>{interator?.comments}</span><img src={Console}></img>
         </div>
       </div>
     )

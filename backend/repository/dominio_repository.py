@@ -1,6 +1,5 @@
 from sqlalchemy import update, delete
 
-from backend.config.core import session
 from backend.model.Dominio import Dominio
 
 dominio = Dominio()

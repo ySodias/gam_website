@@ -1,6 +1,6 @@
+from flask import session
 from sqlalchemy import update, delete
 
-from backend.config.core import session
 from backend.model.Post import Post
 
 post = Post()

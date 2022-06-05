@@ -1,7 +1,7 @@
-import { Navbar, Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGamepad, faBars } from '@fortawesome/free-solid-svg-icons';
-import CSS from 'csstype';
+import CSS from 'csstype'
 
 const aStyle: CSS.Properties = {
   textDecoration: 'none',
@@ -15,7 +15,7 @@ export function Header(){
       <Row >
           <Col md={4}>
             <div className='p-3'>
-              <a style={aStyle} className="p-3">
+              <a style={aStyle} className="p-3" href='/menu'> 
                 <FontAwesomeIcon icon={faBars} /></a>
             </div>
           </Col>

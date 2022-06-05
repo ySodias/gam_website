@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
 import { StyledContainer } from './style';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useUser } from '../../hooks';
 
 
@@ -28,6 +28,7 @@ export const FormSignIn = () => {
     })
       if (response.status === 200) {
         navigate('/feed')
+        localStorage.setItem('username', username)
       } else {
         alert('Error')
       }

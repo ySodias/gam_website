@@ -49,7 +49,7 @@ class UserRepository():
         try:
             stm = (
                 update(User).
-                where(User.username == body.get('username')).
+                where(User.id == body.get('id')).
                 values(body)
             )
             session.execute(stm)

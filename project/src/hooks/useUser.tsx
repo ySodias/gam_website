@@ -14,12 +14,27 @@ export const useUser = () => {
     return data
     }, []);
 
+    const getUserByUsername = useCallback(async (username) => {
+        const { status, data } = await UserService.getUserByUsername(username);
+        if (status != 200) throw new Error();
+        setUser(data)
+        return data
+    }, []);
+
     const postUser = useCallback(async (user) => {
         const { status, data } = await UserService.postUser(user);
     if (status != 201) throw new Error();
     const response = { data, status}
     return response
     }, []);
+
+    const putUser = useCallback(async (user) => {
+        const { status, data } = await UserService.putUser(user);
+    if (status != 200) throw new Error();
+    const response = { data, status}
+    return response
+    }, []);
+
 
     const toLogin = useCallback(async (login) => {
         const { status, data } = await UserService.getByData(login)
@@ -32,7 +47,9 @@ export const useUser = () => {
 return {
     user,
     getUserById,
+    getUserByUsername,
     postUser,
+    putUser,
     toLogin
     }
 }

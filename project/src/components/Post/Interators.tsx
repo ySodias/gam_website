@@ -14,7 +14,6 @@ let id_old: number = 0
 export const Interator: React.FC<IPostProps> = ({
   interator
 }) => {
-  console.log(interator)
     return(
         <div className='d-flex px-3 border pt-3 pb-3'>
         <div >

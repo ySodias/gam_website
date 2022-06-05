@@ -35,8 +35,8 @@ class UserService():
         return response
 
     def put_user(self, data):
-        user = self.get_user_by_id(data)
-        response = user_repository.update_user(data) if user else ('User Not Found', 404)
+        user = self.get_user_by_id(data['data'])
+        response = user_repository.update_user(data['data']) if user else ('User Not Found', 404)
         return response
 
     def delete_user(self, data):

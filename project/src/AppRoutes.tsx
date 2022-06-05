@@ -32,3 +32,11 @@ export const Menu = React.lazy(() => {
   ])
   .then(([moduleExports]) => moduleExports);
 });
+
+export const EditAccount = React.lazy(() => {
+  return Promise.all([
+    import('./pages/EditAccount/EditAccount'),
+    new Promise(resolve => setTimeout(resolve, 1000))
+  ])
+  .then(([moduleExports]) => moduleExports);
+});

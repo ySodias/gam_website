@@ -47,7 +47,7 @@ const Menu: React.FunctionComponent<IMenuPageProps> = (props) => {
                     Edit Post </a></td>
                   </tr>
                   <tr>
-                    <td><a href='' style={aStyle}>
+                    <td><a href='/editaccount' style={aStyle}>
                       <FontAwesomeIcon icon={faPencil} 
                     className="mx-3"/>
                     Edit Account</a></td>
